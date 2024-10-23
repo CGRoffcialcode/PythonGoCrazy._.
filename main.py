@@ -3,11 +3,18 @@ from flask import url_for
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    request.form.get()
-    return 'Hi, create a account'
-
+@app.route('/, ['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST']) 
+def index(): 
+    if request.method == 'POST': 
+        # Retrieve the text from the textarea 
+        text = request.form.get('textarea') 
+  
+        # Print the text in terminal for verification 
+        print(text) 
+  
+    return render_template('home.html') 
+  
 @app.route('/login')
 def login():
     return 'login'
