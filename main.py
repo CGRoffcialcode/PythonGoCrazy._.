@@ -3,7 +3,6 @@ from flask import url_for
 
 app = Flask(__name__)
 
-@app.route('/, ['GET', 'POST'])
 @app.route('/', methods=['GET', 'POST']) 
 def index(): 
     if request.method == 'POST': 
