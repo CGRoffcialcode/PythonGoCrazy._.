@@ -5,7 +5,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'index'
+    request.form.get()
+    return 'Hi, create a account'
 
 @app.route('/login')
 def login():
